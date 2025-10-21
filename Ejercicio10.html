@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Mi Página</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; margin: 20px; }
+        button { margin: 5px; padding: 10px; }
+        #resultado { 
+            background-color: #f0f0f0; 
+            padding: 10px; 
+            margin-top: 10px;
+            border: 1px solid #ccc;
+            white-space: pre-wrap;
+        }
+    </style>
+</head>
+<body>
+
+<h1>Página de Ejemplo</h1>
+<p>Este es un párrafo de ejemplo en el cuerpo de la página.</p>
+<div>Este es un div con <strong>texto en negrita</strong>.</div>
+
+<button id="btnCabecera">Mostrar HTML de la Cabecera</button>
+<button id="btnCuerpo">Mostrar HTML del Cuerpo</button>
+
+<div id="resultado"></div>
+
+<script>
+    $(document).ready(function() {
+        // Botón para mostrar el HTML de la cabecera
+        $('#btnCabecera').click(function() {
+            var htmlCabecera = $('head').html();
+            $('#resultado').text(htmlCabecera);
+        });
+        
+        // Botón para mostrar el HTML del cuerpo
+        $('#btnCuerpo').click(function() {
+            var htmlCuerpo = $('body').html();
+            $('#resultado').text(htmlCuerpo);
+        });
+    });
+</script>
+
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es"> 
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Focus - Cambio de color</title>
+</head>
+<body>
+    <h1>Controles de texto con cambio de color</h1>
+    
+    <input type="text" id="texto1" value="Primer campo de texto" class="campo-texto">
+    <br><br>
+    <input type="text" id="texto2" value="Segundo campo de texto" class="campo-texto">
+
+    <script>
+        // Seleccionar todos los campos de texto
+        const camposTexto = document.querySelectorAll('.campo-texto');
+        
+        // Aplicar color azul inicial
+        camposTexto.forEach(campo => {
+            campo.style.color = 'blue';
+        });
+        
+        // Agregar event listeners para el evento focus
+        camposTexto.forEach(campo => {
+            campo.addEventListener('focus', function() {
+                this.style.color = 'red';
+            });
+            
+            campo.addEventListener('blur', function() {
+                this.style.color = 'blue';
+            });
+        });
+    </script>
+</body>
+</html>

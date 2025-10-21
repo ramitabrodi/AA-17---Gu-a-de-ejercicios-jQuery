@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Iteración por los elementos (each)</title>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			padding: 20px;
+			background: #f5f5f5;
+		}
+
+		.panel {
+			max-width: 720px;
+			margin: 0 auto 10px;
+			padding: 12px;
+			border: 1px solid #4CAF50;
+			background: #dff0d8;
+		}
+
+		.titulo {
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+
+		a {
+			display: block;
+			margin: 4px 0;
+			color: #007bff;
+			text-decoration: none;
+		}
+
+		.resaltado {
+			background: yellow;
+			font-weight: bold;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div class="panel">
+		<div class="titulo">Problema:</div>
+		<p>Una página tiene una lista de hipervínculos. Resaltar todos los subdominios <strong>.ar</strong>.
+			Utilizar el método <code>indexOf()</code> de la clase String para verificar si una cadena se encuentra en
+			otra.</p>
+	</div>
+
+	<div id="lista">
+		<a href="https://www.google.com">Google</a>
+		<a href="https://www.clarin.com.ar">Clarin</a>
+		<a href="https://www.unne.edu.ar">UNNE</a>
+		<a href="https://www.wikipedia.org">Wikipedia</a>
+		<a href="https://www.lanacion.com.ar">La Nación</a>
+	</div>
+
+	<script>
+		$(function () {
+			$('#lista a').each(function () {
+				// obtener el texto del enlace
+				let texto = $(this).attr('href');
+				// si contiene ".ar", se resalta
+				if (texto.indexOf('.ar') !== -1) {
+					$(this).addClass('resaltado');
+				}
+			});
+		});
+	</script>
+
+</body>
+
+</html>

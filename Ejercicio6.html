@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+<body>
+
+<!-- Noticia 1 -->
+<div class="noticia">
+    <h3>Título de Noticia 1</h3>
+    <div class="descripcion">
+        Esta es la descripción de la primera noticia. Contiene información importante sobre el evento.
+    </div>
+</div>
+
+<!-- Noticia 2 -->
+<div class="noticia">
+    <h3>Título de Noticia 2</h3>
+    <div class="descripcion">
+        Esta es la descripción de la segunda noticia. Habla sobre los últimos desarrollos tecnológicos.
+    </div>
+</div>
+
+<!-- Noticia 3 -->
+<div class="noticia">
+    <h3>Título de Noticia 3</h3>
+    <div class="descripcion">
+        Esta es la descripción de la tercera noticia. Trata sobre eventos deportivos recientes.
+    </div>
+</div>
+
+<br>
+<button onclick="cambiarTamano('pequeno')">Texto Pequeño</button>
+<button onclick="cambiarTamano('normal')">Texto Normal</button>
+<button onclick="cambiarTamano('grande')">Texto Grande</button>
+
+<script>
+    function cambiarTamano(tamano) {
+        // Seleccionar todos los elementos con clase "descripcion"
+        $('.descripcion').removeClass('pequeno normal grande');
+        
+        if (tamano === 'pequeno') {
+            $('.descripcion').addClass('pequeno');
+        } else if (tamano === 'normal') {
+            $('.descripcion').addClass('normal');
+        } else if (tamano === 'grande') {
+            $('.descripcion').addClass('grande');
+        }
+    }
+</script>
+
+<style>
+    .descripcion.pequeno {
+        font-size: 12px;
+    }
+    
+    .descripcion.normal {
+        font-size: 16px;
+    }
+    
+    .descripcion.grande {
+        font-size: 20px;
+    }
+    
+    .noticia {
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        padding: 10px;
+    }
+</style>
+
+</body>
+</html>

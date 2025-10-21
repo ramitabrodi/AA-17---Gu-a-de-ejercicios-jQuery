@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evento Blur - Validación campo vacío</title>
+</head>
+<body>
+    <h1>Validación de campo al perder foco</h1>
+    
+    <form>
+        <label for="campoTexto">Ingrese texto:</label>
+        <input type="text" id="campoTexto" placeholder="Escriba algo aquí">
+    </form>
+
+    <script>
+        // Seleccionar el campo de texto
+        const campoTexto = document.getElementById('campoTexto');
+        
+        // Agregar event listener para el evento blur
+        campoTexto.addEventListener('blur', function() {
+            let cadena = this.value;
+            if (cadena.length == 0) {
+                alert("No ingresó datos");
+            }
+        });
+    </script>
+</body>
+</html>

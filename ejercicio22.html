@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Efecto con fadeTo()</title>
+	<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			padding: 20px;
+			background: #f5f5f5;
+		}
+
+		.panel {
+			max-width: 720px;
+			margin: 0 auto;
+			padding: 12px;
+			border: 1px solid #4CAF50;
+			background: #dff0d8;
+			cursor: pointer;
+			user-select: none;
+		}
+
+		.titulo {
+			font-weight: bold;
+			margin-bottom: 5px;
+		}
+	</style>
+</head>
+
+<body>
+
+	<div id="bloque" class="panel">
+		<div class="titulo">Problema:</div>
+		<p>Confeccionar una página que contenga un div con un conjunto de párrafos.
+			Cuando se presione con el mouse dentro del div reducir su opacidad a 0.2
+			y cuando esté completamente oculto hacer que reaparezca lentamente otro bloque.</p>
+		<p>(Hacé click o presioná dentro del cuadro)</p>
+	</div>
+
+	<script>
+		$(function () {
+			$('#bloque').on('mousedown', function () {
+				// reducir opacidad a 0.2
+				$(this).fadeTo(600, 0.2, function () {
+					// cuando termina, volver a opacidad total (1)
+					$(this).fadeTo(800, 1);
+				});
+			});
+		});
+	</script>
+
+</body>
+
+</html>
